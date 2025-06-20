@@ -1,24 +1,17 @@
-import { useState } from 'react'
-import './App.css'
+import Clicker from './Clicker';
+import { useState } from 'react';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isClicker, setClicker] = useState(false);
 
-  const increment = () => {
-    setCount(count + 1);
-  }
-
-  const decrement = () => {
-    setCount(count - 1);
-  }
-
-  return (
-    <div className='flex'>
-      <input type="button" value='+' onClick={increment}/>
-      <h4>{count}</h4>
-      <input type="button" value='-' onClick={decrement}/>
-    </div>
-  )
+    return (
+        <div>
+            <h3>Some text...</h3>
+            <button type="button" onClick={() => setClicker(!isClicker)}>Toggle here</button>
+            {isClicker && <Clicker />}
+        </div>
+    );
 }
 
-export default App
+export default App;
